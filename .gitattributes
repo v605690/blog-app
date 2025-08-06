@@ -1,2 +1,8 @@
 /mvnw text eol=lf
 *.cmd text eol=crlf
+
+*.java linguist-detectable=true
+*.ts linguist-language=Java  # To force .ts files as Java
+*.tsx linguist-language=Java # To force .tsx files as Java
+
+frontend/** linguist-vendored
