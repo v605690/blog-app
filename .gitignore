@@ -6,8 +6,7 @@ target/
 
 /src/main/resources/application.properties
 /src/docker-compose.yml
-
-
+/blog/frontend
 
 ### STS ###
 .apt_generated
