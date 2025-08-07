@@ -5,7 +5,7 @@ target/
 !**/src/test/**/target/
 
 /src/main/resources/application.properties
-/src/docker-compose.yml
+docker-compose.yml
 /frontend
 
 ### STS ###
