@@ -2,6 +2,7 @@ package com.crus.blog.controllers;
 
 import com.crus.blog.domain.dtos.CategoryDto;
 import com.crus.blog.domain.entities.Category;
+import com.crus.blog.mappers.CategoryMapper;
 import com.crus.blog.services.CategoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -17,13 +18,16 @@ import java.util.List;
 public class CategoryController {
 
     private final CategoryService categoryService;
+    private final CategoryMapper categoryMapper;
 
     @GetMapping
     public ResponseEntity<List<CategoryDto>> listCategories() {
 
-        List<Category> categories = categoryService.listCategories();
+        List<CategoryDto> categories = categoryService.listCategories()
+                .stream().map(categoryMapper::toDto)
+                .toList();
 
-        return null;
+        return ResponseEntity.ok(categories);
 
     }
 }
